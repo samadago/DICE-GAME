@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ce jeu se joue à 2 joueurs. Chacun lance le dé autant de fois qu'il veut. S'il obtient 1 il passe son tour. Le vainqueur est celui dont le score est 100">
+    <!-- Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- Lato thin 100 font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>DICE GAME </title>
+</head>
+
+<body>
+
+    
+    <!-- HEADER -->
+    
+    <header>
+        <h1>Dice game</h1>
+    </header>
+
+    
+    <!-- MAIN -->
+    
+    
+    <main id="game-round" class="container-fluid">
+
+        
+        <!-- Premiere SECTION -->
+        
+
+        <section id="firstSection" class="row pt-4 pt-lg-5">
+
+            <article class="col">
+
+                <!-- New Game  -->
+                <a href="#" id="newGame" class="d-flex justify-content-center align-items-center">
+                    <img src="image/image-croix.svg" alt="nouvelle partie" class="icons">
+                    <span class="pl-2"></span>
+                    NEW GAME
+                </a>
+
+                <!--  displaying the name of the winner -->
+                <div id="bestWinner" class="pt-2 pt-md-4 text-center"></div>
+
+            </article>
+        </section>
+
+
+        
+        <!-- Deuxieme SECTION -->
+        
+
+        <section id="DeuxiemeSection" class="row pt-2 py-md-3 py-lg-4 py-xl-5">
+
+            <!--------------- Player 1 and Global -------------->
+
+            <article class="col-4">
+
+                <!-- Player 1 -->
+                <div class="d-flex justify-content-center align-items-center printPlayer">
+                    <h2 id="player1" class="pr-3">PLAYER 1</h2>
+                    <img src="image/image-cercle.svg" alt="point rouge montrant que le joueur en cours est le player 1" id="dotP1"> 
+                </div>
+
+                <!-- Global score player 1 -->
+                <p id="globalScoreP1" class="globalScore text-center">0</p> 
+
+            </article>
+
+
+            <!------------- Dice ------------->
+
+            <article  class="col-4 text-center pt-3">
+
+                <!-- Dice -->
+                <div id="diceSide" class="pt-3 pt-lg-5"></div>
+           
+            </article>
+
+           
+            <!--------------- Player 2 and Global ----------------->
+
+            <article class="col-4">
+
+                <!-- Player 2 -->
+                <div class="d-flex justify-content-center align-items-center printPlayer">
+                    <h2 id="player2" class="pr-3">PLAYER 2</h2>
+                    <img src="image/image-cercle.svg" alt="point rouge montrant que le joueur en cours est le player 2" id="dotP2"> 
+                </div>
+
+                <!-- Global score player 2 -->
+                <p id="globalScoreP2" class="globalScore text-center">0</p>
+
+            </article>
+
+        </section>
+
+
+        <!----------------------------------------------------------------------------------------------------->
+        <!-- Troisieme SECTION -->
+        <!----------------------------------------------------------------------------------------------------->
+
+        <section id="TroisiemeSection" class="row pt-4 pb-2 pt-lg-5">
+
+            <!--------------- Player 1 Round ----------------->
+
+            <article class="col-4">
+
+                <!-- Round score player 1 -->
+                <div class="card bg-card d-block mx-auto text-center">
+                    <div class="card-body">
+                        <h3 class="card-title text-dark">CURRENT</h3>
+                        <p id="roundScoreP1" class="card-text text-white">0</p>
+                    </div>
+                </div>
+
+            </article>
+
+            <!--------------- 2 Links : Roll Dice & Hold ----------------->
+
+            <article  class="col-4 text-center">
+
+                <!-- Roll Dice link -->
+                <div class="pb-lg-3">
+                    <a href="#" id="rollDiceLink">
+                        <img src="image/image-rond-point.svg" alt="lancer le dé" class="icons">
+                        <span class="pl-2"></span>
+                        ROLL DICE
+                    </a>
+                </div>
+            
+                <!-- Hold link -->
+                <div class="pt-4 pt-lg-4 pt-xl-5">
+                    <a href="#" id="holdLink">
+                        <img src="image/image-cercle.svg" alt="Ajouter les points au score global" class="icons">
+                        <span class="pl-2"></span>
+                        HOLD
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- Player 2 Round -->
+
+            <article class="col-4">
+
+                <!-- Round score player 2 -->
+                <div class="card bg-card d-block mx-auto text-center">
+                    <div class="card-body">
+                        <h3 class="card-title text-dark">CURRENT</h3>
+                        <p id="roundScoreP2" class="card-text text-white">0</p>
+                    </div>
+                </div>
+
+            </article>
+            
+        </section>  
+
+    </main>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    
+</body>
+</html>
